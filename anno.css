@@ -1,0 +1,50 @@
+
+body {
+  padding-top: 50px;
+  width: 650px;
+  margin: 20px auto;
+  text-align: justify;
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 1.2em;
+  line-height: 28px;
+}
+
+h3 {
+  text-align: center;
+}
+
+p {
+  margin: 0;
+  text-indent: 1.5em;
+}
+
+.asterisk {
+  font-family: 'Times New Roman';
+  color: crimson;
+  font-size: 180%;
+  padding: 0px 5px;
+  position: relative;
+  top: 9px;
+  line-height: 0px;
+}
+
+aside {
+  display: block;
+  width: 90%;
+  margin: 10px auto;
+  font-family: Arial, sans-serif;
+  font-size: 80%;
+  line-height: 22px;
+  border-width: thin;
+  border-style: solid;
+  border-radius: 5px;
+}
+
+aside.red {
+  background-color: rgba(255, 0, 0, 0.05);
+  border-color: crimson;
+}
+
+aside > p {
+  padding: 0 10px;
+}
