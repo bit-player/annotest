@@ -2,7 +2,6 @@
 function setTriggers() {
   var i, note;
   var triggers = document.getElementsByClassName('trigger');
-  console.log(triggers);
   for (i = 0; i < triggers.length; i++) {
     triggers[i].addEventListener('click', toggleNote, false);
     note = triggers[i].nextSibling;
@@ -23,18 +22,20 @@ function hideAllNotes() {
 
 function toggleNote() {
   var note;
-  console.log("clicked; this = ", this);
   if (this.classList.contains('note')) {
     note = this;
-    console.log('In toggleNote; note = ', note);
   }
   else {
     note = this.nextSibling;
-    console.log('In else clause; note = ', note);
   }
   if (note.style.display === 'none') {
-    note.style.display = 'inline-block';
+    if (note.classList.contains('nieman')) {
+      note.style.display = 'inline';
     }
+    else {
+      note.style.display = 'inline-block';
+    }
+  }
   else {
     note.style.display = 'none';
   }
