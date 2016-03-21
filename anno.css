@@ -26,11 +26,30 @@ p {
   position: relative;
   top: 9px;
   line-height: 0px;
+  cursor: pointer;
+}
+
+span.highlight {
+  background-color: rgba(220, 20, 60, 0.15);
+  cursor: pointer;
+}
+
+span.dotted-underline {
+  border-bottom-color: crimson;
+  border-bottom-style: dotted;
+  border-bottom-width: thin;
+  cursor: pointer;
+}
+
+span.hover-highlight:hover {
+  background-color: rgba(220, 20, 60, 0.15);
+  
 }
 
 span.note {
-  display: inline-block;
+  display: none;
   margin: 10px 30px;
+  min-width: 570px;
   padding: 10px;
   font-family: Arial, sans-serif;
   font-size: 80%;
@@ -38,10 +57,15 @@ span.note {
   border-width: thin;
   border-style: solid;
   border-radius: 5px;
+  cursor: pointer;
+  text-indent: 0;
+  transition: opacity, 1s;
 }
 
 span.red {
   background-color: rgba(255, 0, 0, 0.05);
   border-color: crimson;
 }
+
+
 

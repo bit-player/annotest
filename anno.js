@@ -1,5 +1,5 @@
 
-function setTriggers () {
+function setTriggers() {
   var i, note;
   var triggers = document.getElementsByClassName('trigger');
   console.log(triggers);
@@ -12,18 +12,25 @@ function setTriggers () {
   }  
 }
 
+function hideAllNotes() {
+  var i;
+  var notes = document.getElementsByClassName('note');
+  for (i = 0; i < notes.length; i++) {
+    notes[i].style.display = 'none';
+  }
+}
 
 
-
-function toggleNote () {
+function toggleNote() {
   var note;
-  console.log("clicked; this = ", this, this.tagName);
-  if (this.classList.contains === 'note') {
+  console.log("clicked; this = ", this);
+  if (this.classList.contains('note')) {
     note = this;
     console.log('In toggleNote; note = ', note);
   }
   else {
     note = this.nextSibling;
+    console.log('In else clause; note = ', note);
   }
   if (note.style.display === 'none') {
     note.style.display = 'inline-block';
@@ -34,3 +41,4 @@ function toggleNote () {
 }
 
 setTriggers();
+hideAllNotes();
