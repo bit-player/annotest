@@ -4,6 +4,10 @@ function setTriggers() {
   var triggers = document.getElementsByClassName('trigger');
   for (i = 0; i < triggers.length; i++) {
     triggers[i].addEventListener('click', toggleNote, false);
+    if (triggers[i].classList.contains('hover-preview')) {
+      triggers[i].addEventListener('mouseenter', toggleNote, false);
+      triggers[i].addEventListener('mouseleave', toggleNote, false);
+    }
     note = triggers[i].nextSibling;
     if (note.classList.contains('note')) {
       note.addEventListener('click', toggleNote, false);

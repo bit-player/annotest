@@ -29,6 +29,14 @@ p {
   cursor: pointer;
 }
 
+.moustache {
+  font-family: 'Times New Roman';
+  color: crimson;
+  font-size: 120%;
+  line-height: 0px;
+  cursor: pointer;
+}
+
 span.highlight {
   background-color: rgba(220, 20, 60, 0.15);
   cursor: pointer;
