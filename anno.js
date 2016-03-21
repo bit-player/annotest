@@ -1,4 +1,11 @@
 
+
+
+var ALL_SHOW = false;
+
+window.addEventListener("load", init, false);
+
+
 function setTriggers() {
   var i, note;
   var triggers = document.getElementsByClassName('trigger');
@@ -15,22 +22,53 @@ function setTriggers() {
   }  
 }
 
-function hideAllNotes() {
-  var i;
-  var notes = document.getElementsByClassName('note');
-  for (i = 0; i < notes.length; i++) {
-    notes[i].style.display = 'none';
+function toggleAllNotes() {
+  if (ALL_SHOW) {
+    hideAllNotes();
+  }
+  else {
+    showAllNotes();
   }
 }
 
 
-function toggleNote() {
+
+function hideAllNotes() {
+  var i, btn;
+  var notes = document.getElementsByClassName('note');
+  for (i = 0; i < notes.length; i++) {
+    notes[i].style.display = 'none';
+  }
+  ALL_SHOW = false;
+  btn = document.getElementById('global-toggle');
+  btn.innerHTML = 'Show All';
+}
+
+function showAllNotes() {
+  var i, notes;
+  hideAllNotes();
+  notes = document.getElementsByClassName('note');
+  for (i = 0; i < notes.length; i++) {
+    toggleNote(notes[i]);
+  }
+  ALL_SHOW = true;
+  btn = document.getElementById('global-toggle');
+  btn.innerHTML = 'Hide All';
+}
+
+
+function toggleNote(arg) {
   var note;
-  if (this.classList.contains('note')) {
-    note = this;
+  if (arg.nodeType && arg.classList.contains('note')) {
+    note = arg;
   }
   else {
-    note = this.nextSibling;
+    if (this.classList.contains('note')) {
+      note = this;
+    }
+      else {
+        note = this.nextSibling;
+      }
   }
   if (note.style.display === 'none') {
     if (note.classList.contains('nieman')) {
@@ -45,5 +83,7 @@ function toggleNote() {
   }
 }
 
-setTriggers();
-hideAllNotes();
+function init() {
+  setTriggers();
+  hideAllNotes();  
+}
